@@ -2,7 +2,7 @@ var models = require('../models/models.js');
 
 // GET /quizes/question
 exports.question = function(req, res) {
-	models.Quiz.finsAll().succes(function(quiz){
+	models.Quiz.findAll().success(function(quiz){
 		res.render('quizes/question', {pregunta: quiz[0].pregunta});
 	})
 };
