@@ -16,20 +16,32 @@
   <body>
 	<div id="page-warp">
 		<header class="main" id="h1">
-    		<h2>Quiz : El juego de las preguntas</h2>
+    		<h2>Quiz<span> : El juego de las preguntas</span></h2>
 		</header>
+
 		<nav class="main" id="n1" role="navigation">
 			<span><a href="/">Inicio</a></span>
-			<span><a href="/quizes/question">Preguntas</a></span>
-			<span><a href="/author">Autores</a></span>
+			<span><a href="/quizes">Preguntas</a></span>
+<!--			<span><a href="/author">Autores</a></span>  -->
 		</nav>
 		<section class="main" id="s1">
-			<%- body %>
+<!--			<%- body %> -->
+			<div>
+				<table>
+					<tr><td><a href="quizes/1">Capital de Italia(layout)</a></td></tr>
+					<tr><td><a href="quizes/2">Capital de Portugal</a></td></tr>
+				</table>
+			</div>
 		</section>
-
 		<footer class="main" id="f1">
+			<a href="http://es.wikipedia.org/wiki/Quiz"> ¿Qué es un quiz?</a>
+		</footer>
+
+
+<!--		<footer class="main" id="f1">
 			GitHub link : <a href="https://github.com/flormarper/quiz15-albertTest"> https://github.com/flormarper/quiz15-albertTest</a>
 		</footer>
+-->
 	</div>
   </body>
 </html>
