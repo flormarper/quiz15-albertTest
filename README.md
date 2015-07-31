@@ -5,9 +5,9 @@
 #Welcome to Alberto version of QUIZ
 # quiz15-albertTest
 
-This repository has been done for Exercise in :
+This repository has been update for Exercise in :
 
-Modulo6_ProyectoQuizI:PatronModeloVistaControlador(MVC)_GenerarProyectoConExpress-generator_PrimeraPaginaPrimeraPregunta_DespliegueEnLaNube(Heroku) 
+Modulo7_ProyectoQuizII:BaseDatos(DB)TablasSequelize.jsSQLite_DespliegueHerokuComPostgres_PresentarListasQuizesAutoload
 
 This repository based on https://github.com/jquemada/quiz-2015/commits/master 
 Visit : https://quiz-2015.herokuapp.com/
