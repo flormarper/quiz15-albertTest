@@ -16,8 +16,15 @@ exports.load = function(req, res, next, quizId) {
 
 
 // GET /quizes
+//NOta : tambien sirve para --> GET  /quizes?search=texto_a_buscar
 exports.index = function(req, res) {
-	models.Quiz.findAll().then(
+	var search ="%";
+	if(req.query.search != undefined){
+		search = "%" + req.query.search + "%";
+		search = search.trim().replace(/\s/g,"%");
+	}
+
+	models.Quiz.findAll({where:["upper(pregunta) like ?", search.toUpperCase()], order:"pregunta"}).then(
 		function(quizes){
 			res.render('quizes/index.ejs',{ quizes: quizes});
 		}
@@ -37,3 +44,11 @@ exports.answer = function(req, res) {
 	}
 	res.render('quizes/answer', { quiz: req.quiz, respuesta: resultado});
 };
+
+// GET /quizes/search
+exports.searcher = function(req, res){
+	res.render('quizes/search',{ title: 'Busqueda' })
+};
+
+// hacer buscador
+//   GET  /quizes?search=texto_a_buscar
