@@ -7,7 +7,7 @@
 
 This repository has been done for Exercise in :
 
-Modulo6_ProyectoQuizI:PatronModeloVistaControlador(MVC)_GenerarProyectoConExpress-generator_PrimeraPaginaPrimeraPregunta_DespliegueEnLaNube(Heroku) 
+Modulo7   Branch : busquedas
 
 This repository based on https://github.com/jquemada/quiz-2015/commits/master 
 Visit : https://quiz-2015.herokuapp.com/
