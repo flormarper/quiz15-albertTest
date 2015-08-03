@@ -37,23 +37,24 @@ exports.Quiz = Quiz;	//exportar definición de la tabla Quiz
 sequelize.sync().then(function() {
 	//  then(..) ejecuta el manejador una vez creada la tabla
 	Quiz.count().then(function(count) {
-		if (count === 0) { 	//la tabla se inicializa solo si está vacía
+		if (count === 0) {	// la tabla se inicializa solo si está vacía
 			Quiz.create({ pregunta: 'Capital de Italia',
-						  respuesta: 'Roma'
-						});
-			Quiz.create({ pregunta: 'Capital de Portugal',
-						  respuesta: 'Lisboa'
-						});
-			Quiz.create({ pregunta: 'Pregunta de prueba 1. Respuesta: uno',
-						  respuesta: 'uno'
-					   });			
-			Quiz.create({ pregunta: 'Pregunta de prueba 2. Respuesta: dos',
-						  respuesta: 'dos'
+						  respuesta: 'Roma',
+						  tema:		'Humanidades'	
 					   });
-			Quiz.create({ pregunta: 'Pregunta de prueba 3. Respuesta: uno dos',
-						  respuesta: 'uno dos'
+			Quiz.create({ pregunta: 'Capital de Portugal',
+						  respuesta: 'Lisboa',
+						  tema:		'Humanidades'
+					   });
+			Quiz.create({ pregunta: 'Artilugio volador que su funcionamiento se basa en calentartar el aire de su interior y la gente va en una cesta',
+						  respuesta: 'Globo',
+						  tema:		'Ciencia'
+					   });
+			Quiz.create({ pregunta: 'Animal que conocemos como mejor amigo del hombre',
+						  respuesta: 'Perro',
+						  tema:		'Ciencia'
 					   })
-			.then(function() {console.log('Base de datos inicializada')});
+			.then(function(){console.log('Base de datos inicializada')});
 		};
 	});
 });

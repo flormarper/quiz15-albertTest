@@ -25,18 +25,23 @@
 			<span><a href="/quizes/search">Search</a></span>
 <!--			<span><a href="/author">Autores</a></span>  -->
 		</nav>
+
 		<section class="main" id="s1">
-			<%- body %> 
+			<% if (errors.length) { %>
+				<span id='ErrorMsg'>
+					Corregir errores:<br>
+					<% for (var i in errors) { %>
+						<span> <%= errors[i].message %> </span> <br/>
+					<% } %>
+				</span>
+			<% } %>
+			<div><%- body %></div>
 		</section>
+
 		<footer class="main" id="f1">
-			<a href="http://es.wikipedia.org/wiki/Quiz"> ¿Qué es un quiz?</a>
+			<a href="http://es.wikipedia.org/wiki/Quiz"> ¿Qué es un quiz?</a><br>
+			<a href="https://github.com/flormarper/quiz15-albertTest"> GitHub link</a>
 		</footer>
-
-
-<!--		<footer class="main" id="f1">
-			GitHub link : <a href="https://github.com/flormarper/quiz15-albertTest"> https://github.com/flormarper/quiz15-albertTest</a>
-		</footer>
--->
 	</div>
   </body>
 </html>

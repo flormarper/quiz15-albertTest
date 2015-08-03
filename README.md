@@ -7,7 +7,7 @@
 
 This repository has been update for Exercise in :
 
-Modulo7_ProyectoQuizII:BaseDatos(DB)TablasSequelize.jsSQLite_DespliegueHerokuComPostgres_PresentarListasQuizesAutoload
+Modulo8_ProyectoQuizIII:GestionListasQuizes_CrearEditarBorrar
 
 This repository based on https://github.com/jquemada/quiz-2015/commits/master 
 Visit : https://quiz-2015.herokuapp.com/

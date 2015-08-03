@@ -33,44 +33,8 @@ nav span{
 		margin: 0px 10px 0px 0px;
 }
 
-div.fotoCv, div.textoIntro,div.videoPersonal,div.presenta  {
-	margin: 0px;
-	padding: 10px;
-	border-radius: 5px;
-	border: 0px;
-	text-align: left;	
-}
-div.fotoCv{
-	background-color: #EE9;
+#ErrorMsg{
+		color: #f61;
+		font-size: smaller;
 }
 
-img.fotoCV {
-	width:auto;
-}
-
-.pieFoto {
-	font-size:0.7em;
-}
-
-div.textoIntro, div.presenta {
-	background-color: #CC9;
-	margin-top:5px;
-}
-
-div.videoPersonal {
-	float:left;
-	background-color: #EE9;
-	margin-right:10px;
-	margin-bottom:5px;
-
-}
-
-.videoPersonal video{
-	-moz-box-shadow: -5px -5px 5px #888;
-	-webkit-box-shadow: -5px -5px 5px #888;
-	box-shadow: -5px -5px 5px #888;
-}
-video.personal{
-	width:280px;
-	height:210px;
-}
