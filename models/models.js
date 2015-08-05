@@ -31,7 +31,15 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 var quiz_path = path.join(__dirname,'quiz');
 var Quiz = sequelize.import(quiz_path);
 
+//Importar la definición de la tabla Comments
+var comment_path = path.join(__dirname,'comments');
+var Comment = sequelize.import(comment_path);
+
+Comment.belongsTo(Quiz);
+Quiz.hasMany(Comment);
+
 exports.Quiz = Quiz;	//exportar definición de la tabla Quiz
+exports.Comment = Comment;
 
 // sequelize.sync() inicializa la tabla de preguntas en DB
 sequelize.sync().then(function() {
@@ -46,7 +54,7 @@ sequelize.sync().then(function() {
 						  respuesta: 'Lisboa',
 						  tema:		'Humanidades'
 					   });
-			Quiz.create({ pregunta: 'Artilugio volador que su funcionamiento se basa en calentartar el aire de su interior y la gente va en una cesta',
+			Quiz.create({ pregunta: 'Artilugio volador que su funcionamiento se basa en calentar el aire de su interior y la gente va en una cesta',
 						  respuesta: 'Globo',
 						  tema:		'Ciencia'
 					   });
