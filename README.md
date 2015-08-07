@@ -5,7 +5,7 @@
 #Welcome to Alberto version of QUIZ
 # quiz15-albertTest
 
-This repository has been update for Examples in :
+This repository has been update for Exercise AUTOLOGOUT in :
 
 Modulo9_ProyectoQuizIV: CrearModerarComentarios EnQuizes_RelacionarLasTablasBD_SesionAutentiofcarAutorizar_HTTPSeguro (HTTPS)
 
