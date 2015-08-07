@@ -44,7 +44,33 @@ app.use(function(req, res, next) {
 	next();
 });	
 
-app.use('/', routes);
+app.use('/', function(req, res, next) {
+	//Sesion con Login : Se comprueba el tiempo entre peticiones HTTP, si han pasado dos minutos de cierra la sesión
+	if (!req.path.match(/\/login|\/logout/)) {
+		if (req.session.time) {						//Se comprueba que ls sesión tiene apuntada una hora de actualización de página
+			var now = new Date();					// Hora actual de la petición HTTP actual
+			var stamp = new Date(req.session.time); //Hora guardada en petición HTTP anterior
+			var elapsed = now -stamp;
+			//Comprobación que el tiempo entre peticiones HTTP < 2 minutos
+			if (elapsed > 20000) {
+				res.redirect('/logout');		//Sesión caducada
+			} else {
+				req.session.time = new Date(); 	//Se actualiza la hora de la ultima petición
+				next();
+			}
+		} else {  
+			//Como no hay apuntado un tiempo de actualización se concluye que no se esta LOGEADO
+			next();
+        }
+	} else {
+		if (req.path.match(/\/login/)) {
+			req.session.time = new Date();	// Al hacer LOGIN , se asigna una hora de actualización
+		} else { 
+			req.session.time = NaN; // Al hacer LOGOUT , se asigna un valor nulo a la variable que controla la hora de actualización de petición HTTP
+		}
+		next();
+	}
+}, routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
